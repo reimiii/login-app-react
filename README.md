@@ -1,4 +1,6 @@
 ## run di local
+sebelum nya pastikan backend sudah berjalan... `mvn spring-boot:run` di backend [code-be](https://github.com/reimiii/code-be)
+
 required: nodejs, npm or yarn
 
 clone repo `git clone git@github.com:reimiii/login-app-react.git`
