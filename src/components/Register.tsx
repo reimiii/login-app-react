@@ -24,10 +24,12 @@ const Register: React.FC = () => {
         } catch (error: any) {
             console.error('Login failed', error);
             if (error.response && error.response.status === 400) {
+                setError(null)
                 setErrors(error.response.data); 
             }
 
             if (error.response && error.response.status === 409) {
+                setErrors({})
                 setError(error.response.data.error);
             }
         }

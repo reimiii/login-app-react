@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (!token) {
-            navigate('/login'); // ke login jika token tidak ada
+            navigate('/login'); 
         } else {
             axios
                 .get('http://localhost:8181/api/v1/home', {
@@ -28,8 +28,8 @@ const Home: React.FC = () => {
     }, [navigate]);
 
     const handleLogout = () => {
-        localStorage.removeItem('token'); // Hapus token dari localStorage
-        navigate('/login'); // Arahkan kembali ke halaman login
+        localStorage.removeItem('token'); 
+        navigate('/login'); 
     };
 
     return (
