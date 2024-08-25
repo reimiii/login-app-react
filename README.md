@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+## run di local
+required: nodejs, npm or yarn
+
+clone repo `git clone git@github.com:reimiii/login-app-react.git`
+
+masuk ke root project dir `cd login-app-react`
+
+jalankan `yarn install` lalu jalankan `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+---
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
