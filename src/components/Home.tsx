@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
-    const [data, setData] = useState<string | null>(null);
+    const [data, setData] = useState<{ [key: string]: string }>({});
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
     return (
         <div style={styles.container}>
             <h4>Welcome to Home!</h4>
-            <p>{data}</p>
+            <p>Hallo, {data.name}</p>
             <button onClick={handleLogout} style={styles.button}>Logout</button>
         </div>
     );
