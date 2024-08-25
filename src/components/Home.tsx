@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (!token) {
-            navigate('/login'); // ke login
+            navigate('/login'); // ke login jika token tidak ada
         } else {
             axios
                 .get('http://localhost:8181/api/v1/home', {
@@ -27,7 +27,39 @@ const Home: React.FC = () => {
         }
     }, [navigate]);
 
-    return <div>Welcome to Home! {data}</div>;
+    const handleLogout = () => {
+        localStorage.removeItem('token'); // Hapus token dari localStorage
+        navigate('/login'); // Arahkan kembali ke halaman login
+    };
+
+    return (
+        <div style={styles.container}>
+            <h4>Welcome to Home!</h4>
+            <p>{data}</p>
+            <button onClick={handleLogout} style={styles.button}>Logout</button>
+        </div>
+    );
+};
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column' as 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        textAlign: 'center' as 'center',
+    },
+    button: {
+        padding: '10px 20px',
+        backgroundColor: '#FF5733',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        marginTop: '20px',
+    },
 };
 
 export default Home;
+
